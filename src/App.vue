@@ -31,7 +31,7 @@ export default {
       error.value = "";
       try {
         const response = await axios.get(
-          "https://mango-lemon-tip.glitch.me/articles"
+          "https://glowing-stormy-caption.glitch.me/articles"
         );
         articles.value = response.data;
       } catch (err) {
@@ -53,8 +53,8 @@ export default {
 
       try {
         const url = form.id
-          ? `https://mango-lemon-tip.glitch.me/articles/${form.id}`
-          : "https://mango-lemon-tip.glitch.me/articles";
+          ? `https://glowing-stormy-caption.glitch.me/articles/${form.id}`
+          : "https://glowing-stormy-caption.glitch.me/articles";
         const method = form.id ? "put" : "post";
         const response = await axios[method](url, {
           title: form.title,
@@ -89,7 +89,9 @@ export default {
       error.value = "";
 
       try {
-        await axios.delete(`https://mango-lemon-tip.glitch.me/articles/${id}`);
+        await axios.delete(
+          `https://glowing-stormy-caption.glitch.me/articles/${id}`
+        );
         articles.value = articles.value.filter((article) => article.id !== id);
       } catch (err) {
         error.value = "Error deleting article: " + err.message;
