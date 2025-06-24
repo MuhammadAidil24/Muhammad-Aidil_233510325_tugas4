@@ -30,7 +30,9 @@ export default {
       loading.value = true;
       error.value = "";
       try {
-        const response = await axios.get("http://localhost:3000/articles");
+        const response = await axios.get(
+          "https://mousy-liberating-beaufort.glitch.me/articles"
+        );
         articles.value = response.data;
       } catch (err) {
         error.value = "Error loading articles: " + err.message;
@@ -51,8 +53,8 @@ export default {
 
       try {
         const url = form.id
-          ? `http://localhost:3000/articles/${form.id}`
-          : "http://localhost:3000/articles";
+          ? `https://mousy-liberating-beaufort.glitch.me/articles/${form.id}`
+          : "https://mousy-liberating-beaufort.glitch.me/articles";
         const method = form.id ? "put" : "post";
         const response = await axios[method](url, {
           title: form.title,
@@ -87,7 +89,9 @@ export default {
       error.value = "";
 
       try {
-        await axios.delete(`http://localhost:3000/articles/${id}`);
+        await axios.delete(
+          `https://mousy-liberating-beaufort.glitch.me/articles/${id}`
+        );
         articles.value = articles.value.filter((article) => article.id !== id);
       } catch (err) {
         error.value = "Error deleting article: " + err.message;
