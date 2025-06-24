@@ -31,7 +31,7 @@ export default {
       error.value = "";
       try {
         const response = await axios.get(
-          "https://glowing-stormy-caption.glitch.me/articles"
+          "https://6d270502-63ef-411b-8d4a-20d1c93aa350-00-m1dgx7b3mnl.sisko.replit.dev/articles"
         );
         articles.value = response.data;
       } catch (err) {
@@ -53,8 +53,8 @@ export default {
 
       try {
         const url = form.id
-          ? `https://glowing-stormy-caption.glitch.me/articles/${form.id}`
-          : "https://glowing-stormy-caption.glitch.me/articles";
+          ? `https://6d270502-63ef-411b-8d4a-20d1c93aa350-00-m1dgx7b3mnl.sisko.replit.dev/articles/${form.id}`
+          : "https://6d270502-63ef-411b-8d4a-20d1c93aa350-00-m1dgx7b3mnl.sisko.replit.dev/articles";
         const method = form.id ? "put" : "post";
         const response = await axios[method](url, {
           title: form.title,
@@ -90,7 +90,7 @@ export default {
 
       try {
         await axios.delete(
-          `https://glowing-stormy-caption.glitch.me/articles/${id}`
+          `https://6d270502-63ef-411b-8d4a-20d1c93aa350-00-m1dgx7b3mnl.sisko.replit.dev/articles/${id}`
         );
         articles.value = articles.value.filter((article) => article.id !== id);
       } catch (err) {
